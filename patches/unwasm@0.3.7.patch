@@ -1,0 +1,26 @@
+diff --git a/dist/plugin.cjs b/dist/plugin.cjs
+index a85e47a4ab4fefb6b25755a78c1dd631e764f040..a76f3b0716d89d2bde8c3d2a9f00064424281061 100644
+--- a/dist/plugin.cjs
++++ b/dist/plugin.cjs
+@@ -161,7 +161,7 @@ ${code}`;
+       resolved = false;
+     }
+     code += `
+-  ${moduleName}: {`;
++  ${JSON.stringify(moduleName)}: {`;
+     for (const name of importNames2) {
+       code += pkgImport ? `
+     ${name}: _imports_${moduleName}.${name},
+diff --git a/dist/plugin.mjs b/dist/plugin.mjs
+index 6561b2e5906f7a676f68517ae2be6d7f79ecf88b..15226a90b79b1fcee97829b9ebe1051887d9dede 100644
+--- a/dist/plugin.mjs
++++ b/dist/plugin.mjs
+@@ -153,7 +153,7 @@ ${code}`;
+       resolved = false;
+     }
+     code += `
+-  ${moduleName}: {`;
++  ${JSON.stringify(moduleName)}: {`;
+     for (const name of importNames2) {
+       code += pkgImport ? `
+     ${name}: _imports_${moduleName}.${name},
